@@ -1,0 +1,25 @@
+table{
+    border: 1px solid black;
+}
+th,td{
+    border-collapse: collapse;
+    border: 1px solid black;
+
+}
+.blue{
+    background-color: rgb(134, 219, 255);
+}
+.green{
+    background-color: rgb(177, 255, 177);
+}
+.pink{
+    background-color: rgb(255, 147, 223);
+
+}
+.yellow{
+    background-color: rgb(251, 255, 167);
+    
+}
+.gray{
+    background-color: gray;
+}

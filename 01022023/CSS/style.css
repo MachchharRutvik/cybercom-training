@@ -1,0 +1,33 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    /* justify-content:space-between; */
+    margin:20px 140px;
+
+}
+.items{
+    /* height: 315px;
+    width: 215px; */
+    text-align: center;
+    border: solid black;
+    margin: 30px;
+    
+}
+p{
+    /* margin-top: 60px; */
+    text-align: center;
+    color: rgb(70, 70, 70);
+    margin:30px 80px;
+
+    
+}
+
+.main-container{
+    /* width: 90%; */
+   /* margin-left: 10%; */
+}
+figcaption{
+    /* color: rgb(97, 96, 96); */
+    border-top: 1px solid gray;
+    background-color: silver;
+}

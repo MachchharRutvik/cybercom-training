@@ -1,0 +1,13 @@
+
+.container{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+
+}
+.inputs{
+    margin: 10px 10px;
+}
+.notes{
+    margin-left: 60px;
+}

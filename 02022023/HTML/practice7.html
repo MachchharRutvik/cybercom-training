@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/02022023/CSS/practice7.css">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Your address</legend>
+        <form action="success.html">
+        <table>
+            <tr>
+                <td>First name</td>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td>Last name</td>
+                <td><input type="text" name="" id=""></td>
+            </tr>
+            <tr>
+                <td>Street</td>
+                <td><input type="text" name="" id=""></td>
+            </tr>
+            <tr>
+                <td>City</td>
+                <td><input type="text" name="" id=""></td>
+            </tr>
+        </table>
+    </fieldset>
+    <fieldset>
+        <legend>Additional details</legend>
+        <table>
+            <tr>
+                <td>Biography</td>
+                <td><textarea name="" id="" cols="20" rows="4"></textarea></td>
+            </tr>
+            <tr>
+                <td>Image</td>
+                <td><input type="file" name="" id=""></td>
+            </tr>
+            <tr>
+                <td>Age Group</td>
+                <td><input type="number" name="" id=""></td>
+            </tr>
+            
+        </table>
+    </fieldset>
+    <fieldset>
+        <legend>Interests</legend>
+        <table>
+            <tr>
+                <td>Hobbies</td>
+                <td><select name="hobby" id="">
+                    <option value="soccer">Playing soccer</option>
+                    <option value="dancing">Dancing</option>
+                    <option value="gardening">Gardening</option>
+                    <option value="movies">Watching movies</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td>Favourite car?</td>
+                <td><select name="cars" id="">
+                    <option value="volvo">Volvo</option>
+                    <option value="mercedes">Mercedes</option>
+                    <option value="bmw">BMW</option>
+                    <option value="rr">Rolls royce</option></td>
+            </tr>
+            <tr>
+                <td>Favourite public transport?</td>
+                <td><select name="Transport" id="">
+                    <option value="train ">Train</option>
+                    <option value="bus">Bus</option></td></tr></select>
+            </tr>
+          
+        </table>
+        
+    </fieldset>
+    <br>
+        <button onclick="success()">Submit</button>
+        <input type="reset">
+    </form>
+    <script>
+    function success(){
+        window.location.href = "success.html";
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+body{
+    margin: 0;
+}
+table,th,td{
+    border: 2px solid black;
+    text-align: center;
+}
+.center{
+    margin: auto;
+    /* margin-top: 10%; */
+}
+.heading{
+    text-align: center;
+}
