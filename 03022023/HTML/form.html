@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/03022023/CSS/form.css">
+
+    <title>Form</title>
+</head>
+
+<body>
+    <div class="mainContainer"></div>
+    <div class="headings">
+        <p class="first_heading">Information</p>
+        <h1>Health Care Insurance <sup>+</sup></h1>
+        <p class=>complete all answers in capital letters</p>
+    </div>
+
+    <div class="container">
+        <fieldset class="blueBorder boxes">
+            <h4 class="blue">EMPLOYEE STATEMENT</h4>
+            <label for="group_contact_number" class="inputs">Group Contact Number</label>
+            <input type="text" name="group_contact_number" id="group_contact_number" class="inputs">
+            <label for="certificate_number" class="inputs">Certificate Number</label>
+            <input type="text" name="certificate_number" id="certificate_number" class="inputs"><br>
+            <label for="employee_last_name" class="inputs">Employee Last name and given name</label>
+            <input type="text" name="employee_last_name" id="employee_last_name" class="inputs">
+            <label for="dob" class="inputs">Date of birth(DD/MM/YY)</label>
+            <input type="date" name="dob" id="dob" class="inputs"><br>
+            <label for="employee_address" class="inputs">Employee Address</label>
+            <input type="text" name="employee_address" id="employee_address" class="inputs"><br>
+
+            <span class="inputs blue">Would you like your claims and payments deposited into your bank
+                account?</span><br>
+            <input type="checkbox" name="yes" id="yes" class="inputs">
+            <label for="checkbox">Yes, I have included a valid cheque</label><br>
+            <span class="inputs">Please note that only a one time valid cheque is required if you change your banking
+                information a new valid cheque will be needed</span>
+
+        </fieldset>
+        <fieldset class="blueBorder boxes">
+            <h4 class="blue">COORDINATION OF BENEFITS</h4>
+            <span class="inputs">1.Does you're spouse and/or children have coverage under any other medical plans or
+                contract?</span>
+            <input type="radio" name="medical" id="medical1" onclick="radio_element1()">
+            <label for="">Yes</label>
+            <input type="radio" name="medical" id="medical2" onclick="radio_element1()">
+            <label for="">No</label>
+            <div id="result" class="inputs"></div>
+            <span class="inputs">2.Is any expense the result of an accident?</span>
+            <input type="radio" name="accident" id="accident_yes" onclick="radio_element2()">
+            <label for="">Yes</label>
+            <input type="radio" name="accident" id="accident_no" onclick="radio_element2()">
+            <label for="">No</label>
+            <div id="result2" class="inputs"></div>
+
+        </fieldset>
+        <div class="table-fields" id="information">
+            <h4 class="blue">DRUGS,VISION CARE,PARAMEDICAL SERVICES AND OTHERS-PATIENT INFORMATION</h4>
+            <table id="table" class="inputs">
+                <tr>
+                    <th>Patient's name</th>
+                    <th>Date of Birth</th>
+                    <th>Relationship to plan member</th>
+                    <th>Total charge</th>
+
+                </tr>
+                <tr>
+                    <td><input type="text" name="" id="td1"></td>
+                    <td><input type="date" name="" id="td2"></td>
+                    <td><input type="text" name="" id="td3"></td>
+                    <td><input type="text" name="" id="td4"></td>
+                </tr>
+                <br>
+
+        </div>
+        </table>
+        <button id="addButton" onclick="addField()" class="inputs">add</button>
+
+
+    </div>
+    </div>
+    <script src="/03022023/JS/form.js"></script>
+
+</body>
+
+</html>

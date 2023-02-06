@@ -1,13 +1,17 @@
-
+.fieldset{
+    background-color: rgb(254, 253, 218);
+}
 .container{
     display: flex;
     justify-content: center;
     flex-direction: row;
-
 }
 .inputs{
     margin: 10px 10px;
 }
 .notes{
     margin-left: 60px;
+}
+#table,tr,th,td{
+    border: 1px solid black;
 }

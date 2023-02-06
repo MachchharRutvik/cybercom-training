@@ -5,21 +5,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/02022023/CSS/practice8.css">
+    <link rel="stylesheet" href="/02022023/CSS/practice8.css"/>
     
     <title>Document</title>
 </head>
 
 <body>
     <div class="container">
-        <fieldset>
+        <fieldset class="fieldset">
 
             <h3>Personal Information</h3>
-            <form action="">
+            <form action="" name="form1" autocomplete="off" >
                 <label for="first_name">First Name:</label>
-                <input type="text" name="first_name" class="inputs" required><br>
+                <input type="text" name="first_name" class="inputs"id="first_name" required><br>
                 <label for="last_name">Last Name:</label>
-                <input type="text" name="last_name" class="inputs" required><br>
+                <input type="text" name="last_name" class="inputs"id="last_name" required><br>
                 <label for="date">Date of Birth:</label>
                 <input type="date" name="date" id="date" class="inputs" required><br>
                 <label for="gender">Gender</label>
@@ -44,7 +44,11 @@
                     <option value="choose_question">Choose a security question </option>
                     <option value="school">What is your First school?</option>
                     <option value="pet">What is your pet name?</option>
+
                 </select><br>
+                <label for="security_answer">Security Answer:</label>
+                <input type="text" name="security_answer" id="security_answer">
+
                 <span class="notes">(Not case-sensitive)</span>
                 <h3>Contact Information</h3>
                 <label for="address">Address:</label>
@@ -68,7 +72,7 @@
 
                 </select><br>
                 <span class="notes">No space or dashes</span><br>
-                <input type="submit" value="Submit" class="inputs">
+                <input type="submit" value="Submit" class="inputs" onclick="emailSame();passwordSame(); storeData();">
                 <input type="reset" value="Reset" class="inputs">
 
 
@@ -76,7 +80,45 @@
 
             </form>
         </fieldset>
+        
     </div>
+    <button id="btn" onclick="showData();">Show data</button>
+    <table id="table">
+        <tr id="row">
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Date of birth</th>
+            <th>Gender</th>
+            <th>Email ID</th>
+            <th>Security Question</th>
+            <th>Security Answer</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Zip</th>
+            <th>Optional zip</th>
+            <th>Phone No.</th>
+        </tr>
+        <tr>
+            <td id="data1" ></td>
+            <td id="data2"></td>
+            <td id="data3"></td>
+            <td id="data4"></td>
+            <td id="data5"></td>
+            <td id="data6"></td>
+            <td id="data7"></td>
+            <td id="data8"></td>
+            <td id="data9"></td>
+            <td id="data10"></td>
+            <td id="data11"></td>
+            <td id="data12"></td>
+            <td id="data13"></td>
+        </tr>
+        
+
+    </table>
+
+    <script src="/02022023/JS/practice8.js"></script>
 </body>
 
 </html>
