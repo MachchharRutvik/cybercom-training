@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practice1.1</title>
+</head>
+
+<body>
+    <h1>Question:1</h1>
+    <p id="paragraph">Hi!</p>
+    <button onclick="change();">Click me</button>
+
+    <h1>Question:2</h1>
+    <input type="text" name="" id="inputText" required />
+    <ul id="listOfItems">
+        <li>Apple</li>
+        <li>Mango</li>
+        <li>Grapes</li>
+    </ul>
+    <button id="add">Add</button>
+    <button onclick="removeElement()">Remove</button>
+
+    <h1>Question:3</h1>
+    <p class="question3">First paragraph</p>
+    <p class="question3">second paragraph</p>
+    <p class="question3">third paragraph</p>
+    <p class="question3">fourth paragraph</p>
+
+    <input type="button" value="1" id="btn1" onclick="changeText(1)"><input type="button" value="2"
+        onclick="changeText(2)" id="btn2"><input type="button" value="3" onclick="changeText(3)" id="btn3"><input
+        type="button" value="4" onclick="changeText(4)" id="btn4">
+
+    <h1>Question:4</h1>
+
+    <form action="" onsubmit="return validation()" name="form" id="form">
+        <span id="error1"style="color:red"></span><br>
+
+        First Name:
+        <input type="text" name="firstName" id="firstName"required>
+        <br>
+        Last Name:
+        <input type="text" name="lastName" id="lastName"required>
+        
+        <br>
+        DOB
+        <input type="date" name="dateOfBirth" id="dateOfBirth"required><br>
+        Address:
+        <input type="text" name="address" id="address"required><br>
+        email:
+        <input type="text" name="email" id="email" ><br>
+        Password:
+        <input type="password" name="password" id="password" ><br>
+        <input type="submit" value="submit" >
+    </form>
+
+    <h1>Question:5</h1>
+    <img src="/Images/dog.webp" id="dog" alt="dog" width="150" height="150" onclick="changePhoto(1);">
+    <img src="/Images/tiger.webp"id="tiger" alt="dog" width="150" height="150" onclick="changePhoto(2);">
+    
+    
+
+
+    <script>
+        function change() {
+            x = document.getElementById("paragraph");
+            x.innerHTML = "Changed Text";
+        }
+
+        var node = document.querySelector("#inputText");
+        var btn = document.querySelector("#add");
+        btn.addEventListener("click", () => {
+            ul = document.querySelector("ul");
+            li = document.createElement("li");
+            ul.appendChild(li);
+            li.innerHTML = node.value;
+        });
+
+        function removeElement() {
+            var lastNode = document.getElementsByTagName("li");
+            var length = lastNode.length - 1;
+            lastNode[length].remove();
+        }
+        function changeText(no) {
+            var listOfPara = document.getElementsByClassName("question3");
+            listOfPara[no - 1].innerHTML = "changed";
+
+        }
+
+        function validation() {
+            var email = document.getElementById("email").value;
+            if (!/[^\s@]+@[^\s@]+\.[^\s@]+/gi.test(email)) {
+                document.getElementById("error1").innerHTML = "Invalid Email";
+                return false;
+
+            }
+            var truePassword = new RegExp("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$");
+            var password = document.getElementById("password").value;
+            if (!truePassword.test(password)) {
+                document.getElementById("error1").innerHTML = "Invalid Password";
+                return false;
+            }
+            return true;
+        }
+        function changePhoto(number){
+            var images = document.getElementsByTagName("img");
+            images[number-1].src="/Images/cat.webp"
+
+
+        }
+        var formData = serialize(document.forms[0]);
+        console.log(formData);
+
+    </script>
+</body>
+
+</html>
