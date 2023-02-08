@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const numbers = [1, 2, 5, 6, 6];
+        sumOfArray(numbers);
+        avgOfArray(numbers);
+        maxValueOfArray(numbers);
+
+        function sumOfArray(array) {
+            let sum = 0;
+            array.forEach((element) => {
+                sum += element;
+                return sum;
+            });
+            console.log(sum);
+        }
+        function avgOfArray(array){
+            let sum = 0;
+            array.forEach((element) => {
+                sum += element;
+               
+            });
+            console.log(sum/array.length);
+        }
+        function maxValueOfArray(array){
+           let max = Math.max(...array);
+           console.log(max);
+  
+        }
+
+    </script>
+</body>
+
+</html>

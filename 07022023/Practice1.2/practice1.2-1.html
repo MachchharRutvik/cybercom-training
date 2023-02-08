@@ -1,25 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Practice 1.2</title>
+    <title>Document</title>
 </head>
-
 <body>
     <h1>Question 1</h1>
     <p id="demo"></p>
     <p id="demo1"></p>
-
-    <h1>Question 2</h1>
-    <p id="question2">RUtvik</p>
-    <h1>Question 3</h1>
-
-
-    <script>
-        const person = {
+<script>
+     const person = {
             name: "Rutvik",
             age: 20,
             address: "viramgam"
@@ -30,21 +22,6 @@
         person.age = 30;
         person.address="Bhavnagar"
         document.getElementById("demo1").innerHTML =  JSON.stringify(person);
-        
-        const product ={
-            name:"laptop",
-            price:50000,
-            quantity:5
-        };
-        calulatePrice(10);
-        function calulatePrice(number){
-            var price = number * product.price;
-        document.getElementById("question2").innerHTML = "The price of 10 " + product.name +" "+price; 
-
-        }
-     
-
-    </script>
+</script>
 </body>
-
 </html>
