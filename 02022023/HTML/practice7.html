@@ -10,7 +10,7 @@
 <body>
     <fieldset>
         <legend>Your address</legend>
-        <form action="success.html">
+        <form action="success.html" id="myForm">
         <table>
             <tr>
                 <td>First name</td>
@@ -83,7 +83,10 @@
         <input type="reset">
     </form>
     <script>
-    function success(){
+      
+        let details = document.getElementById("myForm").serialize();
+        console.log(details);
+         function success(){
         window.location.href = "success.html";
     }
     </script>

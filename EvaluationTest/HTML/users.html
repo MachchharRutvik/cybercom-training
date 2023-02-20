@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/EvaluationTest/CSS/user.css">
+</head>
+
+<body>
+
+
+    <div class="sideBar">
+        <span>Hello </span><span id="nameOfAdmin"></span>
+        <a href="/EvaluationTest/HTML/dashboard.html">Dashboard</a>
+        <a href="/EvaluationTest/HTML/users.html">Users</a>
+        <a href="/EvaluationTest/HTML/loginsession.html">Login Session</a>
+        <a href="/EvaluationTest/HTML/login.html" id="logoutBtn">Logout</a>
+    </div>
+    <div class="right-body">
+        <h3 id="heading">Add User</h3>
+        <form action="" name="userForm" id="userForm">
+
+            <input type="text" name="name" id="name" placeholder="Name" required>
+            <span id="errMsgName">error </span><br>
+
+            <input type="text" name="email" id="email" placeholder="Email" required>
+            <span id="errMsgEmail">error </span><br>
+
+            <input type="password" name="password" id="password" placeholder="password" required>
+            <span id="errMsgPassword">error </span><br>
+            <input type="date" name="birthDate" id="birthDate" placeholder="Birthdate" required>
+            <!-- <input type="button" value="add user" onClick="addUser()"> -->
+            <button onclick="addUser()" id = "addUserBtn">add user</button><br><br>
+            
+
+        </form>
+<table id="dataTable" class="table">
+<tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Password</th>
+    <th>Birthdate</th>
+    <th>Age</th>
+    <th>Actions</th>
+</tr>
+</table>
+    </div>
+
+    <script src="/EvaluationTest/JS/user.js"></script>
+    <!-- <script src="/JS/logout.js"></script> -->
+
+</body>
+
+</html>

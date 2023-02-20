@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/EvaluationTest/CSS/registration.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Registration</h1>
+        <div class="box">
+            <span id="adminExists">error</span>
+            <form action="" name="registrationForm" id="registrationForm">
+            <input class="inputs" type="text" name="name" id="name" placeholder="Name"><br><span id="errName">error msg</span>
+            <input class="inputs" type="text" name="email" id="email" placeholder="Email"><br><span id="errEmail">error msg</span>
+            <input class="inputs" type="password" name="password" id="password"placeholder="password"><br><span id="errPassword">error msg</span>
+            <input class="inputs" type="password" name="confirmPassword" id="confirmPassword"placeholder="Confirm Password"><br><span id="errConPassword">error msg</span>
+            <select name="city" id="city" class="inputs" required>
+                <option value="selectCity">Select City</option>
+                <option value="ahmedabad">Ahmedabad</option>
+                <option value="bhavnagar">Bhavnagar</option>
+                <option value="surat">Surat</option>
+            </select>
+            <select name="state" id="state" class="inputs" required>
+                <option value="selectCity">Select State</option>
+                <option value="gujarat">Gujarat</option>
+                <option value="bhavnagar">Rajasthan</option>
+                <option value="surat">Delhi</option>
+            </select>
+            <br>
+            <input type="checkbox" name="termsCondition" id="termsCondition" onClick="enableRegister()"><span>Terms & Conditions</span>
+            <input class="inputs button" type="button" value="REGISTER" id="registerBtn" disabled >
+            <br>
+            <a href="/EvaluationTest/HTML/login.html"><input type="button" value="login" id="loginBtn"></a>
+        </form>
+        </div>
+    </div>
+    
+    <script src="/EvaluationTest/JS/registration.js"></script>
+</body>
+</html>

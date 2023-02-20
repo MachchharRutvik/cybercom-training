@@ -1,0 +1,29 @@
+h1{
+    text-align: center;
+}
+.box{
+    text-align: center;
+    border: 1px solid black;
+    width: 22vw;
+    margin-left: auto;
+    margin-right: auto;
+    /* background-color: rgb(255, 233, 205); */
+}
+.inputs{
+    margin:10px 5px;
+    width: 17vw;
+}
+.button{
+   
+    background-color: orange;
+    color:white;
+    font-size: 10px;
+    padding: 7px;
+    border-radius: 5px;
+}
+#errName,#errEmail,#errPassword,#errConPassword,#adminExists{
+    display: none;
+}
+#loginBtn{
+    display: none;
+}
