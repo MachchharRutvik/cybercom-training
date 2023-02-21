@@ -56,10 +56,8 @@ WHERE
 -- Check the example for clarity. Return the result table in any 
 -- order.
 
-
-select player_id,event_date,sum(games_played) as games_played_so_far
-from activity
-group by event_date;
-
+select * from activity;
+select player_id,
+    event_date, sum(gameS_played) OVER(PARTITION BY player_id ORDER BY event_date) from Activity;
 
 
