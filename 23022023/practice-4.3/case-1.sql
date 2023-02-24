@@ -122,4 +122,7 @@ group by day(created_at);
 select u.id,u.email
 from users u join orders o
 on u.id = o.user_id 
-where o.created_at = year(current_date) and u.email like "%example.com%";
+where year(o.created_at) = year(current_date) and u.email like "%.com";
+
+select * from users ;
+select * from orders;
