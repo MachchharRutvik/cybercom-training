@@ -23,6 +23,7 @@
 -- category_id: foreign key pointing to the book_categories table
 
 
+
 create database practice4_1_1;
 use practice4_1_1;
 create table Books(
@@ -101,6 +102,7 @@ limit 1;
 
 -- . Write a query to find the name of the category with the 
 -- most number of books.
+
 SELECT book_categories.name, COUNT(*) AS num_books
 FROM books
 JOIN book_category_mappings ON books.id = book_category_mappings.book_id
@@ -166,3 +168,15 @@ join book_borrowings bb on b.id = bb.book_id
 group by b.id
 order by count(bb.id) desc
 limit 5;
+
+SELECT 
+    a.name, GROUP_CONCAT(bc.name) as categories
+FROM
+    authors a
+        JOIN
+    books b ON a.id = b.author_id
+        JOIN
+    book_category_mappings bcm ON bcm.book_id = b.id
+        JOIN
+    book_categories AS bc ON bcm.category_id = bc.id
+GROUP BY a.id;
