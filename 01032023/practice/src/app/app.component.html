@@ -1,0 +1,15 @@
+<input #task type="text" />
+<button (click) = 'store(task.value,category.value)'>Add</button>
+<select name="category" #category>
+  <option value="hard" default>high</option>
+  <option value="medium">Medium</option>
+  <option value="easy">low</option>
+</select>
+
+<div >
+
+  <h1  *ngFor = 'let item of taskArr' [ngClass]="item.category">{{item.task}}</h1>
+
+</div>
+
+
