@@ -1,0 +1,20 @@
+<h1>ng directives</h1>
+
+<h2>ng for</h2>
+<div>
+  <p *ngFor="let i of arrOfObj">{{i.name}}'s age is {{i.age}}</p>
+</div>
+<p *ngIf="toggleValue; else elseBlock">It is True</p>
+<ng-template #elseBlock><p> It is else block</p></ng-template>
+
+<p [ngClass]="isTrue ? 'red' :''">Change its color with ngClass</p>
+
+saveable<input type="checkbox" name="saveable" id="saveable" [(ngModel)] = "canSave">
+changeable<input type="checkbox" name="changeable" id="changeable" [(ngModel)] = "isChangeable">
+special<input type="checkbox" name="special" id="special" [(ngModel)] = "isSpecial">
+<button (click)="setChanges()">refresh changes</button>
+<p [ngClass]="currentClasses">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, qui minima, aut quis voluptatum sequi optio doloribus delectus placeat velit dolore, at molestias voluptas? Dignissimos molestias magni eaque ipsum dolore.</p>
+
+<p [ngStyle]="currentStyles" >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa distinctio fuga id eligendi modi explicabo commodi impedit assumenda qui dolorum!</p>
+<button (click)="setCurrentStyles()">change</button>
+

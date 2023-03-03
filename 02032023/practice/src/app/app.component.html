@@ -1,0 +1,6 @@
+<p>{{name}}</p>
+<input type="text" (keyup)="changeImage($event)" [value]= "imgURL">
+<input type="text"  [(ngModel)]= "imgURL">
+<img [src]="imgURL">
+
+<app-post [img]="imgURL" (imgSelected)="logImg($event)"></app-post>

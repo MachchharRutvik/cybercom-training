@@ -1,30 +1,4 @@
-// import { Component } from '@angular/core';
 
-// @Component({
-//   selector: 'app-root',
-//   templateUrl: './app.component.html',
-//   styleUrls: ['./app.component.css']
-// })
-// export class AppComponent {
-//   title = 'practice';
-//   public name=''
-//   taskPriority=""
-//   tempArr:any = []  
-//   addToList(){
-//     this.tempArr.push(this.name);
-//     this.tempArr.push(this.taskPriority);
-  
-//     console.log(this.tempArr)
-
-//   }
-//   public toDoList:Array<any> = [
-//     {
-//       toDoText:this.tempArr[0],
-//       priority:this.tempArr[1]
-//     }
- 
-//   ]
-// }
 
 import { Component } from '@angular/core';
 

@@ -1,0 +1,14 @@
+
+<p>{{name}}</p>
+<p>{{currentDate | date : "MMMM d"}}</p>
+<p>{{currentDate | date : 'short' }}</p>
+<p>{{currentDate | date : "dd mm yy"}}</p>
+<p>{{cost | currency:'INR'}} </p>
+<p>{{temperature | number}}</p>
+<p>{{temperature | number:'1.0-0'}}</p>
+
+<input type="text" (keyup)="changeImage($event)" [value]= "imgURL">
+<input type="text"  [(ngModel)]= "imgURL">
+<!-- <img [src]="imgURL"> -->
+
+<app-post [img]="imgURL" (imgSelected)="logImg($event)"></app-post>
