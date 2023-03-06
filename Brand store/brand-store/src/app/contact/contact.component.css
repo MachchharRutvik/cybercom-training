@@ -1,0 +1,38 @@
+
+section{
+    margin-top: 50px;
+    background: url('../../assets/banner.jpg');
+    padding: 1.5em 2.14em;
+    background-position: top center;
+  }
+  nav{
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  }
+  .queries{
+    background-color: white;
+    text-align: center;
+    height: 700px;
+    padding: 50px;
+  }
+  span{
+    font-size: 15px;
+  }
+  
+  .card-grp{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .card
+  {padding: 20px;
+    margin: 5px;
+  
+    width: 300px;
+    height: 160px;
+  }
+  

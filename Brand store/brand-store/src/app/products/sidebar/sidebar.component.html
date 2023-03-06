@@ -1,0 +1,60 @@
+<section>
+    <div class="search">
+      <input type="text"> <button>{{'>'}}</button>
+    </div>
+    <div class="filterByPrice">
+      <h6>Filter By Price</h6>
+      <input type="range" name="" id=""><br>
+    </div>
+  
+    <!-- categories filter -->
+    <div class="categories">
+      <h4>Categories</h4>
+      <div class="category">
+        <div class="item">
+  
+          <a [routerLink]="['/products-category','accessories']">ACCESSORIES</a>
+        </div>
+        <div class="count">
+          {{countAccessories}}
+        </div>
+      </div>
+      <div class="category">
+        <div class="item">
+          <a [routerLink]="['/products-category','women']">WOMEN</a>
+  
+        </div>
+        <div class="count">
+          {{countWomen}}
+        </div>
+      </div>
+      <div class="category">
+        <div class="item">
+          <a [routerLink]="['/products-category','men']">MEN</a>
+        </div>
+        <div class="count">
+          {{countAccessories}}
+        </div>
+      </div>
+  
+    </div>
+  
+  
+    <!-- best sellers -->
+  
+    <div class="bestSellers">
+      <h6>Our Best Sellers</h6>
+      <div class="items" *ngFor="let item of products | slice:0:5">
+        <div><img src="assets/dummy.jpg" alt=""></div>
+        <div class="details">
+          <div class="details">
+            <span class="name">{{item.name}}</span>
+            <span class="cla">☆☆☆☆☆</span>
+            <span class="price">{{item.price | currency}}</span>
+           </div>
+        </div>
+      </div>
+    </div>
+  
+  </section>
+  

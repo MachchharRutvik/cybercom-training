@@ -1,0 +1,43 @@
+
+a{
+  text-decoration: none;
+  color: white;
+  padding: 0 1em;
+
+  background-color: transparent;
+}
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0084d6;
+  padding: 30px 50px;
+}
+
+.left{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.9em;
+  font-weight: 600;
+}
+
+.brand{
+  width: 140px;
+  color: black;
+}
+img{
+  width: 100;
+  height: 45px;
+  color: black;
+}
+
+.right{
+  font-weight: 300;
+}
+
+#cart
+{
+  padding: 15px 10px;
+  border: 1px solid white;
+}

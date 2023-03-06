@@ -1,0 +1,54 @@
+footer{
+    padding: 50px 150px;
+  }
+  a{
+    text-decoration: none;
+    color: black;
+    padding: 0 1em;
+  
+    background-color: transparent;
+  }
+  img{
+    width: 70px;
+    height: 30px;
+    margin-bottom: 30px;
+  }
+  h2{
+    font-size: 30px;
+  }
+  .items
+  {
+    margin: 50px 0px;
+    display: grid;
+    grid-template-columns: 43% 20% 20% 30%;
+  }
+  
+  ul,li{
+    list-style-type: none;
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  button{
+    padding: 8px 15px;
+    border: 0px;
+    color: white;
+    background-color: blue;
+    margin-top: 20px;
+  }
+  input{
+    height: 40px;
+    width: 200px;
+    margin-top: 20px;
+    background-color: aliceblue;
+    border: 1px solid bisque;
+  
+  }
+  .copyRight
+  {
+    padding: 0px 150px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
