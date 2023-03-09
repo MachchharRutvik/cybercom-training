@@ -21,14 +21,10 @@ setTable=false;
       this.user = user;
       this.loggedIn = (user != null);
       console.log(this.user)
-     
-      
     });
   
   }
   showDetails(data: string){
-    
-    // console.log("data");
   this.getApi.apiCall(data).subscribe((data)=>{
     console.warn("get api data",data);
     this.ipDetails=data;

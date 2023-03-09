@@ -13,8 +13,6 @@ export class GetApiService {
 
    }
    apiCall(data: string){
-    // console.warn(data);
-    // console.log(HttpParams,observable)
     return this.http.get(`https://ipinfo.io/${data}/geo?token=81379697d2ed5d`);
    }
 }

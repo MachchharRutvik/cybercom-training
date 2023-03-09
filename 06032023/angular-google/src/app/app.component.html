@@ -6,9 +6,8 @@
   <div>
     <h4>{{user.name}}</h4>
     <p>{{user.email}}</p>
-    <input class="form-control" [(ngModel)] = 'data' #ip="ngModel" type="text" name="ip" id="" placeholder="enter ip address" required pattern="^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$
-    "><br>
-    <!-- <small class="text-danger" >enter valid ip address</small><br> -->
+    <input class="form-control"[class.is-invalid]="ip.invalid && ip.touched" [(ngModel)] = 'data' #ip="ngModel" type="text" name="ip" id="" placeholder="enter ip address" required pattern="(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)"><br>
+    <small class="text-danger" [class.d-none]="ip.valid || ip.untouched">enter valid ip address</small><br>
     <!-- <div *ngIf="ip.errors && (ip.invalid || ip.touched)">
       <small class="text-danger" *ngIf="ip.errors['required']">please enter ip address</small>
       <small class="text-danger" *ngIf="ip.errors['pattern']">IP is not valid</small>
