@@ -1,1 +1,2 @@
-<app-student [parentData]="data"></app-student>
+<app-student [parentData]="students" (EventEmitter)="onEmit($event)"></app-student>
+<p>{{dataFromStudentComponent}}</p>

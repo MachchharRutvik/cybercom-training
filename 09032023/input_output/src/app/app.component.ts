@@ -1,6 +1,4 @@
-import { Component, Input } from "@angular/core/core";
-
-
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -8,19 +6,21 @@ import { Component, Input } from "@angular/core/core";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  dataFromStudentComponent:any;
   title = 'input_output';
- data = [
-    {
+  students = [
+    {  
       name:"rutvik",id:"1"
     },
-    {
-      name:"param",id:"2"
+    {  
+      name:"yug",id:"2"
     },
-    {
-      name:"yug",id:"3"
-    },
-    {
-      name:"tejas",id:"4"
+    {  
+      name:"param",id:"3"
+    }]
+
+    onEmit(data: any){
+      this.dataFromStudentComponent=data;
+      console.log(this.dataFromStudentComponent);
     }
-  ]
 }

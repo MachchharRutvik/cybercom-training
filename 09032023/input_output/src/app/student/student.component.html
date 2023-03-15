@@ -1,2 +1,3 @@
 <p>student works!</p>
-{{parentData}}
+<div *ngFor="let item of parentData">{{item.id}} {{item.name}}</div>
+<button (click)="emitEvent()">button</button>

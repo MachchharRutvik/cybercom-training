@@ -1,4 +1,5 @@
-import { Component, OnInit,Input } from '@angular/core/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+
 
 @Component({
   selector: 'app-student',
@@ -8,8 +9,13 @@ import { Component, OnInit,Input } from '@angular/core/core';
 export class StudentComponent implements OnInit {
 
   constructor() { }
-@Input() public parentData: any;
+
   ngOnInit(): void {
   }
-
+@Input() parentData:any;
+studentData="It is from student component";
+@Output() EventEmitter: any = new EventEmitter;
+emitEvent(){
+  this.EventEmitter.emit(this.studentData);
+}
 }
