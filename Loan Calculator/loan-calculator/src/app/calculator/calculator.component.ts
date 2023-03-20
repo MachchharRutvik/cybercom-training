@@ -53,18 +53,8 @@ export class CalculatorComponent implements OnInit {
     this.roi = interest;
     this.calculate(this.loanAmount, this.noOfMonths, interest);
     this.tableData = this.getTableData();
-    // console.log(this.tableData);
   }
-  // trackByIndex(index: number, obj: any): any {
-  //   return index;
-  // }
-  // dataForTable(){
-
-  //   this.totalInterest = this.totalAmountPayable - this.loanAmount;
-  //   this.interestPercentage=(this.totalInterest / this.totalAmountPayable)*100;
-  //   this.interestTable=this.roiPerMonth*this.loanAmount
-
-  // }
+  
 
   getTableData() {
     let obj: any[] = [];
@@ -80,6 +70,7 @@ export class CalculatorComponent implements OnInit {
         three: tablePrinciple,
         four: interestAmount,
         five: tableEndingBalance,
+        six:i
       };
       obj.push(dupObj);
       tableBeggingBalance = tableEndingBalance;

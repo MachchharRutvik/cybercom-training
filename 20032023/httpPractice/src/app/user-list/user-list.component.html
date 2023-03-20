@@ -1,0 +1,15 @@
+
+<table>
+        <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>email</th>
+    </tr>
+    <tr *ngFor="let user of userData">
+        <td>{{user.id}}</td>
+        <td>{{user.name}}</td>
+        <td>{{user.email}}</td>
+        <td><a [routerLink]="['users',user.id]"><button (click)="update(user.id)">Update</button></a></td>
+        <td><button (click)="delete(user.id)">Delete</button></td>
+    </tr>
+</table>
