@@ -5,41 +5,46 @@ import { UserService } from '../user.service';
 @Component({
   selector: 'app-user-list',
   templateUrl: './user-list.component.html',
-  styleUrls: ['./user-list.component.css']
+  styleUrls: ['./user-list.component.css'],
 })
 export class UserListComponent implements OnInit {
-userData:any;
+  userData: any;
 
-  constructor(private service:UserService) {
-   
-   }
+  constructor(private service: UserService) {}
 
   ngOnInit(): void {
-     this.service.getUsers().subscribe({
-      next:(res)=>{
+    this.service.getUsers().subscribe({
+      next: (res) => {
         this.userData = res;
       },
-      error:(error)=>{
-        console.log("error",error);
-      }
+      error: (error) => {
+        console.log('error', error);
+      },
     });
-
   }
-  update(id: any){
+  update(id: any) {
     let userData;
-     this.service.getUserById(id).subscribe(res=>{
+    this.service.getUserById(id).subscribe((res) => {
       userData = res;
       console.log(res);
-      this.service.updateUser(id,userData).subscribe((res)=>{
+      this.service.updateUser(id, userData).subscribe((res) => {
         console.log(res);
-      })
-    }) 
+      });
+    });
   }
-  delete(id: string){
-    this.service.deleteUser(id).subscribe(res=>{
+  delete(id: string) {
+    this.service.deleteUser(id).subscribe((res) => {
       console.log(res);
-    })
+      const index = this.userData.findIndex((x:any) => {
+        return x.id === id;
+      });
+      if(index){
+        this.userData.splice(index,1);
+        console.log(this.userData)
+      }
+    });
   }
-  
-  
+  childMethod(){
+    alert("hello")
+  }
 }

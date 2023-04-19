@@ -1,14 +1,29 @@
 {
   "users": [
     {
-      "name": "Rutvik machchhar",
-      "email": "rutvik@gmail.com",
+      "name": "Yug patel",
+      "email": "yug@gmail.com",
       "id": 1
     },
     {
-      "name": "as",
-      "email": "as",
+      "name": "Rutvik",
+      "email": "Rutvik@gmail.com",
       "id": 2
+    },
+    {
+      "name": "param",
+      "email": "param@gmail.com",
+      "id": 3
+    },
+    {
+      "name": "tejas faldu",
+      "email": "tejas@gmail.com",
+      "id": 4
+    },
+    {
+      "name": "RUTVIK",
+      "email": "RUTVIK@GMAIL.COM",
+      "id": 5
     }
   ]
 }

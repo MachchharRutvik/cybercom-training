@@ -1,6 +1,6 @@
 <form [formGroup]="userForm">
-    <label for="email">Username</label>
-    <input type="text" name="" id="" formControlName = "userName">
+    <label for="email" >Username</label>
+    <input  appFocus type="text" name="" id="" formControlName = "userName">
     <label for="email">email</label>
     <input type="email" name="" id="" formControlName = "email">
     <button *ngIf="!userId" [disabled]="userForm.invalid" (click)="onAdd()">Add</button>

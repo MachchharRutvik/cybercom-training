@@ -33,7 +33,11 @@
     <div class="form-group">
       <label for="">Confirm Password</label>
       <input [class.is-invalid]="registrationForm.errors?.['misMatch']" formControlName="confirmPassword" type="password" name="" id="" class="form-control">
-      <small class="text-danger" *ngIf="registrationForm.errors?.['misMatch']">Passwords do not match</small>
+      <div>
+       
+        <small class="text-danger" *ngIf="registrationForm.errors?.['misMatch']">Passwords do not match</small>
+        <small class="text-danger" *ngIf="registrationForm.errors?.['required']"> do not match</small>
+      </div>
     </div>
     <div formGroupName="address">
       <div class="form-group">

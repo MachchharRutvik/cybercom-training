@@ -10,48 +10,50 @@ import { UserService } from '../user.service';
 })
 export class AddUserComponent implements OnInit {
   userForm: FormGroup;
-  constructor(private fb: FormBuilder, private service: UserService,private router:Router,private route:ActivatedRoute) {
+  constructor(
+    private fb: FormBuilder,
+    private service: UserService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {
     this.userForm = this.fb.group({
-      userName: ['',Validators.required],
-      email: ['',Validators.required],
+      userName: ['', Validators.required],
+      email: ['', Validators.required],
     });
   }
-userId:any;
-updatedData:any;
+  userId: any;
+  updatedData: any;
   ngOnInit(): void {
-    this.route.params.subscribe((param)=>{
+    this.route.params.subscribe((param) => {
       this.userId = param['id'];
-    })
+    });
     console.log(this.userId);
-    if(this.userId){
-     this.service.getUserById(this.userId).subscribe((res)=>{
-      this.updatedData = res
-      console.log(this.updatedData.name);
-      this.userForm = this.fb.group({
-        userName:[this.updatedData.name,Validators.required],
-        email:[this.updatedData.email,Validators.required]
-      })
-     })
+    if (this.userId) {
+      this.service.getUserById(this.userId).subscribe((res) => {
+        this.updatedData = res;
+        this.userForm.patchValue({
+          userName: this.updatedData.name,
+          email: this.updatedData.email,
+        });
+      });
     }
   }
-  update(){
-     const userForm = this.userForm.getRawValue();
+  update() {
+    const userForm = this.userForm.getRawValue();
     console.log(userForm);
 
     const body = {
       name: userForm.userName || '',
       email: userForm.email || '',
     };
-    
 
-  if(this.userId && this.updatedData){
-    this.service.updateUser(this.userId,body).subscribe((res)=>{
-      console.log(res);
-      this.router.navigate(["/user-list"])
-
-    })
+    if (this.userId && this.updatedData) {
+      this.service.updateUser(this.userId, body).subscribe((res) => {
+        console.log(res);
+        this.router.navigate(['/user-list']);
+      });
+    }
   }
-}
 
   onAdd() {
     const userForm = this.userForm.getRawValue();
@@ -61,19 +63,21 @@ updatedData:any;
       name: userForm.userName || '',
       email: userForm.email || '',
     };
-    
 
     this.service.addUser(body).subscribe({
-      next:(response) => {
-      console.log(response);
-      if(response){
-        console.log("route")
-       this.router.navigate(["/user-list"])
-      }
-    },error:(error)=>{
-      console.log("error",error);
-    }});
+      next: (response) => {
+        console.log(response);
+        if (response) {
+          console.log('route');
+          this.router.navigate(['/user-list']);
+        }
+      },
+      error: (error) => {
+        console.log('error', error);
+      },
+    });
   }
-
-  
+  childFunction(){
+    alert("child");
+  }
 }

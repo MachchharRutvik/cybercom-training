@@ -1,4 +1,4 @@
--- Write an SQL query to report the name, population, and area of 
+	-- Write an SQL query to report the name, population, and area of 
 -- the big countries.
 create database practice2_2_3;
 use practice2_2_3;
