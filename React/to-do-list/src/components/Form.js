@@ -4,9 +4,9 @@ import React from "react";
 function Form() {
   let tasks = [];
   const [idCounter, setIdCounter] = useState(0);
-  const [items, setItems] = useState(tasks);
-  const [doneTasks,setDoneTasks] = useState([])
-
+  const [items, setItems] = useState(() => JSON.parse(localStorage.getItem("tasks")) || []);
+  const [doneTasks,setDoneTasks] = useState(() => JSON.parse(localStorage.getItem("doneTasks")) || []);
+  
   const addTaskHandler = () => {
     if(document.getElementById("task").value){
         tasks = JSON.parse(localStorage.getItem("tasks")) || [];
