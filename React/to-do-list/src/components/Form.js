@@ -1,9 +1,9 @@
 import { useState } from "react";
 import React from "react";
-
 function Form() {
   let tasks = [];
-  const [idCounter, setIdCounter] = useState(0);
+  let task_length = localStorage.getItem('tasks').length
+  const [idCounter, setIdCounter] = useState(task_length);
   const [items, setItems] = useState(() => JSON.parse(localStorage.getItem("tasks")) || []);
   const [doneTasks,setDoneTasks] = useState(() => JSON.parse(localStorage.getItem("doneTasks")) || []);
   
@@ -84,7 +84,7 @@ function Form() {
           {doneTasks.length > 0
             ? doneTasks.map((item) => (
                 <li className="mt-3" key={item.id}>
-                <span className="mt-1">{item.task}</span>
+                <span className="mt-1">{item.task }</span>
                 </li>
               ))
             : null}
