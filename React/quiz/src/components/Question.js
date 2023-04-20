@@ -60,10 +60,17 @@ function Question() {
     }
     console.log(correctAnswers);
   };
+  const resetHandler = () =>{
+    setCurrentIndex(0);
+      setQuestion(questions[0]);
+      setCorrectAnswers(0);
+      setShowResult(false);
+
+  }
 
   return (
     <div className="container mt-5 border border-black w-75">
-     <button className="btn btn-danger">Reset</button>
+     <button className="btn btn-danger" onClick={resetHandler}>Reset</button>
       {showResult ? (
         <RightAnswerComponent correctAnswers={correctAnswers} />
       ) : (
