@@ -10,6 +10,7 @@ function App() {
     email: "",
     password: "",
     confirmPassword: "",
+    mobile:""
   };
   const onSubmit = (values) => {
     console.log(values, "values");
@@ -27,6 +28,7 @@ function App() {
     confirmPassword: Yup.string()
       .required("Required")
       .oneOf([Yup.ref("password"), null], "Password must match"),
+      mobile:Yup.string().required("Required").matches('^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$',"Invalid Number")
   });
 
   const formik = useFormik({
@@ -77,6 +79,20 @@ function App() {
           />
           {formik.touched.email && formik.errors.email ? (
             <div className="error">{formik.errors.email}</div>
+          ) : null}
+        </div>
+        <div className="form-control">
+          <label htmlFor="email">Mobile No</label>
+          <input
+            type="text"
+            name="mobile"
+            id="mobile"
+            onBlur={formik.handleBlur}
+            onChange={formik.handleChange}
+            value={formik.values.mobile}
+          />
+          {formik.touched.mobile && formik.errors.mobile ? (
+            <div className="error">{formik.errors.mobile}</div>
           ) : null}
         </div>
         <div className="form-control">
