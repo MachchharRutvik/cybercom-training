@@ -33,6 +33,13 @@ function AddProduct() {
   const handleFaqChange = (value) => {
     formik.setFieldValue("frequentlyAskedQuestions", value);
   };
+  const handleImageUpload = (e) => {
+    const files = e.target.files;
+    formik.setFieldValue("productImages", [
+      ...formik.values.productImages,
+      ...files,
+    ]);
+  };
   const validationSchema = Yup.object({
     productName: Yup.string()
       .required("Required")
@@ -64,6 +71,7 @@ function AddProduct() {
     warrantyInformation: Yup.string().max(30, "max 30 characters are allowed"),
     returnPolicy: Yup.string().max(30, "max 30 characters are allowed"),
   });
+
   const formik = useFormik({
     initialValues,
     onSubmit,
@@ -138,8 +146,7 @@ function AddProduct() {
                       width: 100 + "%",
                       height: 75 + "px",
                     }}
-                    onChange={formik.handleChange}
-                    value={formik.values.productImages}
+                    onChange={(e) => handleImageUpload(e)}
                     onBlur={formik.handleBlur}
                   />
                 </div>
@@ -180,7 +187,8 @@ function AddProduct() {
                       control={<Radio />}
                       label="No"
                     />
-                    {formik.errors.availability && formik.touched.availability ? (
+                    {formik.errors.availability &&
+                    formik.touched.availability ? (
                       <span style={{ color: "red" }}>
                         {formik.errors.availability}
                       </span>
