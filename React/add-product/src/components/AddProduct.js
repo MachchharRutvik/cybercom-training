@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import TextField from "@mui/material/TextField";
 import { Paper, Grid, Typography, Stack, Box, Button } from "@mui/material";
 import Radio from "@mui/material/Radio";
@@ -10,8 +10,36 @@ import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import Autocomplete from "@mui/material/Autocomplete";
 
 function AddProduct() {
+  const products = [
+    {
+      id: 1,
+      name: "Product A",
+      description: "This is a sample product description.",
+      price: 29.99,
+      image: "https://via.placeholder.com/150",
+      category: "Category A",
+    },
+    {
+      id: 2,
+      name: "Product B",
+      description: "This is another product description.",
+      price: 19.99,
+      image: "https://via.placeholder.com/150",
+      category: "Category B",
+    },
+    {
+      id: 3,
+      name: "Product C",
+      description: "Yet another product description.",
+      price: 9.99,
+      image: "https://via.placeholder.com/150",
+      category: "Category C",
+    },
+  ];
+
   const initialValues = {
     productName: "",
     productDescription: "",
@@ -26,9 +54,13 @@ function AddProduct() {
     frequentlyAskedQuestions: "",
     warrantyInformation: "",
     returnPolicy: "",
+    relatedProducts:[]
   };
   const onSubmit = (values) => {
     console.log(values);
+  };
+  const handleChange = (event, value) => {
+    formik.setFieldValue("relatedProducts", value);
   };
   const handleFaqChange = (value) => {
     formik.setFieldValue("frequentlyAskedQuestions", value);
@@ -82,7 +114,6 @@ function AddProduct() {
     <Grid
       container
       sx={{ marginTop: 5 }}
-      fullWidth
       justifyContent="center"
       alignItems="center"
     >
@@ -284,6 +315,22 @@ function AddProduct() {
                     ) : null
                   }
                 ></TextField>
+                <Autocomplete
+                  multiple
+                  id="relatedProducts"
+                  options={products.map((option) => option.name)}
+                  filterSelectedOptions
+                 
+                  onChange={handleChange}
+                  value={formik.values.relatedProducts}
+                  renderInput={(params) => (
+                    <TextField
+                      {...params}
+                      label="Related Products"
+                      placeholder="Select Related Products"
+                    />
+                  )}
+                />
                 <Box>
                   <label htmlFor="frequentlyAskedQuestions">
                     Frequently Asked Questions{" "}
